@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            margin:50px auto;
+        }
+        img{
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img width="200" id="imgs" height="200" src="./img/img1.jpg" alt="">
+    </div>
+    <script>
+        let myimg = ['./img/img1.jpg','./img/img2.jpg','./img/img3.jpg'];
+        let imgs = document.getElementById('imgs');
+        let count = -1;
+        function myfun(){
+            count++;
+            if(count>=myimg.length){
+                count=0;
+                imgs.src=myimg[count];
+                console.log(count)
+            }else{
+                imgs.src=myimg[count];
+                console.log(count)
+
+                
+            }
+
+           setTimeout("myfun()",1000);
+        }
+        window.onload=myfun();
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
